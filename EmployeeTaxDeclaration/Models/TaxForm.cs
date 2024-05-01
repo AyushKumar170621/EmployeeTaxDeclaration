@@ -36,6 +36,7 @@ namespace EmployeeTaxDeclaration.Models
         public int PrincipalAmount { get; set; }
 
         [Display(Name = "3. National Pension Scheme 80CCD(18) (Limit 50K).")]
+        [Range(0,50000,ErrorMessage = "Does not exceed above 50k")]
         public int NPS { get; set; }
 
         [Display(Name = "4. Higher Education Loan interest u/s 80E.")]
@@ -54,6 +55,7 @@ namespace EmployeeTaxDeclaration.Models
         public int MediClaim { get; set; }
 
         [Display(Name = "9.Preventive Health check-up for Self & Family (80D) (Limit 5K).")]
+        [Range(0,5000,ErrorMessage = "Does not exceed 5k.")]
         public int FamilyHealth { get; set; }
 
         public int ApplicationUserId { get; set; }

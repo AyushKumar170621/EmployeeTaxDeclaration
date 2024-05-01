@@ -21,6 +21,8 @@ namespace EmployeeTaxDeclaration
                 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
                 options.UseSqlServer(connectionString);
             });
+
+            builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.Configure<FormOptions>(options =>
             {
                 options.ValueLengthLimit = 100_000;

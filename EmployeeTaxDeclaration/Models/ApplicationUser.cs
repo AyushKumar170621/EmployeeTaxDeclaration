@@ -34,6 +34,7 @@ namespace EmployeeTaxDeclaration.Models
 
         [Required, NotNull]
         [Display(Name = "Enter your address.")]
+        [StringLength(150,ErrorMessage = "Address does not exceed 150 character.")]
         public required string Address { get; set; }
         [Required,NotNull]
         [Display(Name = "Pin Code")]
