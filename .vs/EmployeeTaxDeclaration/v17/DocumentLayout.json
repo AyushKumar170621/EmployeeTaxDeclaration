@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ayushk\\source\\repos\\EmployeeTaxDeclaration\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FC937C3C-3D72-4A21-BC68-86ACBE53BB9C}|EmployeeTaxDeclaration\\EmployeeTaxDeclaration.csproj|c:\\users\\ayushk\\source\\repos\\employeetaxdeclaration\\employeetaxdeclaration\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC937C3C-3D72-4A21-BC68-86ACBE53BB9C}|EmployeeTaxDeclaration\\EmployeeTaxDeclaration.csproj|solutionrelative:employeetaxdeclaration\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC937C3C-3D72-4A21-BC68-86ACBE53BB9C}|EmployeeTaxDeclaration\\EmployeeTaxDeclaration.csproj|c:\\users\\ayushk\\source\\repos\\employeetaxdeclaration\\employeetaxdeclaration\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC937C3C-3D72-4A21-BC68-86ACBE53BB9C}|EmployeeTaxDeclaration\\EmployeeTaxDeclaration.csproj|solutionrelative:employeetaxdeclaration\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC937C3C-3D72-4A21-BC68-86ACBE53BB9C}|EmployeeTaxDeclaration\\EmployeeTaxDeclaration.csproj|c:\\users\\ayushk\\source\\repos\\employeetaxdeclaration\\employeetaxdeclaration\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC937C3C-3D72-4A21-BC68-86ACBE53BB9C}|EmployeeTaxDeclaration\\EmployeeTaxDeclaration.csproj|solutionrelative:employeetaxdeclaration\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC937C3C-3D72-4A21-BC68-86ACBE53BB9C}|EmployeeTaxDeclaration\\EmployeeTaxDeclaration.csproj|c:\\users\\ayushk\\source\\repos\\employeetaxdeclaration\\employeetaxdeclaration\\models\\taxform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC937C3C-3D72-4A21-BC68-86ACBE53BB9C}|EmployeeTaxDeclaration\\EmployeeTaxDeclaration.csproj|solutionrelative:employeetaxdeclaration\\models\\taxform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC937C3C-3D72-4A21-BC68-86ACBE53BB9C}|EmployeeTaxDeclaration\\EmployeeTaxDeclaration.csproj|c:\\users\\ayushk\\source\\repos\\employeetaxdeclaration\\employeetaxdeclaration\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FC937C3C-3D72-4A21-BC68-86ACBE53BB9C}|EmployeeTaxDeclaration\\EmployeeTaxDeclaration.csproj|solutionrelative:employeetaxdeclaration\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC937C3C-3D72-4A21-BC68-86ACBE53BB9C}|EmployeeTaxDeclaration\\EmployeeTaxDeclaration.csproj|c:\\users\\ayushk\\source\\repos\\employeetaxdeclaration\\employeetaxdeclaration\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC937C3C-3D72-4A21-BC68-86ACBE53BB9C}|EmployeeTaxDeclaration\\EmployeeTaxDeclaration.csproj|solutionrelative:employeetaxdeclaration\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\ayushk\\source\\repos\\EmployeeTaxDeclaration\\EmployeeTaxDeclaration\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "EmployeeTaxDeclaration\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\ayushk\\source\\repos\\EmployeeTaxDeclaration\\EmployeeTaxDeclaration\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "EmployeeTaxDeclaration\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T11:40:40.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ayushk\\source\\repos\\EmployeeTaxDeclaration\\EmployeeTaxDeclaration\\Program.cs",
+              "RelativeDocumentMoniker": "EmployeeTaxDeclaration\\Program.cs",
+              "ToolTip": "C:\\Users\\ayushk\\source\\repos\\EmployeeTaxDeclaration\\EmployeeTaxDeclaration\\Program.cs",
+              "RelativeToolTip": "EmployeeTaxDeclaration\\Program.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwBwAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T11:39:47.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ayushk\\source\\repos\\EmployeeTaxDeclaration\\EmployeeTaxDeclaration\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "EmployeeTaxDeclaration\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ayushk\\source\\repos\\EmployeeTaxDeclaration\\EmployeeTaxDeclaration\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "EmployeeTaxDeclaration\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-01T08:47:58.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\ayushk\\source\\repos\\EmployeeTaxDeclaration\\EmployeeTaxDeclaration\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "EmployeeTaxDeclaration\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\ayushk\\source\\repos\\EmployeeTaxDeclaration\\EmployeeTaxDeclaration\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "EmployeeTaxDeclaration\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T07:34:17.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TaxForm.cs",
+              "DocumentMoniker": "C:\\Users\\ayushk\\source\\repos\\EmployeeTaxDeclaration\\EmployeeTaxDeclaration\\Models\\TaxForm.cs",
+              "RelativeDocumentMoniker": "EmployeeTaxDeclaration\\Models\\TaxForm.cs",
+              "ToolTip": "C:\\Users\\ayushk\\source\\repos\\EmployeeTaxDeclaration\\EmployeeTaxDeclaration\\Models\\TaxForm.cs",
+              "RelativeToolTip": "EmployeeTaxDeclaration\\Models\\TaxForm.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAwwEMAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T06:54:49.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\ayushk\\source\\repos\\EmployeeTaxDeclaration\\EmployeeTaxDeclaration\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "EmployeeTaxDeclaration\\Models\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\ayushk\\source\\repos\\EmployeeTaxDeclaration\\EmployeeTaxDeclaration\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "EmployeeTaxDeclaration\\Models\\ApplicationUser.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwCAAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T06:46:54.774Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
