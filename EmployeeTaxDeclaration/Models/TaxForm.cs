@@ -63,9 +63,9 @@ namespace EmployeeTaxDeclaration.Models
         public ApplicationUser User { get; set; } = null;
 
         public bool Frezeed { get; set; } = false;
-
+        [Display(Name = "LTA (Do you want LTA as reimbursement?)")]
         public bool LTA { get; set; } = false;
-
+        [Display(Name = "Education Allowance (Do you want Edu Allowance as reimbursement?)")]
         public bool EduAllowance { get; set; }
         public string DeclarationStatus { get; set; } = "";
 
