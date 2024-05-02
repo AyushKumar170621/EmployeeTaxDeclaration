@@ -21,15 +21,15 @@ namespace EmployeeTaxDeclaration
                 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
                 options.UseSqlServer(connectionString);
             });
-
-            builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.Configure<FormOptions>(options =>
             {
                 options.ValueLengthLimit = 100_000;
                 options.MultipartBoundaryLengthLimit = 150_000_000;
                 options.MemoryBufferThreshold = 64_000_000;
             });
-
+            builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            .AddRoles<IdentityRole>()
+            .AddEntityFrameworkStores<ApplicationDbContext>();
             var app = builder.Build();
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())

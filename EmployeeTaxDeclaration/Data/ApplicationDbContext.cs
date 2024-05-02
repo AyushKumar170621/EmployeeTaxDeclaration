@@ -9,6 +9,9 @@ namespace EmployeeTaxDeclaration.Data
     {
         public ApplicationDbContext(DbContextOptions options): base(options) { }
 
+        public DbSet<ApplicationUser> AppUsers { get; set; }
+        public DbSet<TaxForm> TaxForms { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -20,7 +23,6 @@ namespace EmployeeTaxDeclaration.Data
             client.NormalizedName = "client";
 
             builder.Entity<IdentityRole>().HasData(admin, client);
-            builder.Entity<TaxForm>().HasIndex(u => u.FinancialYear).IsUnique();
 
         }
     }
