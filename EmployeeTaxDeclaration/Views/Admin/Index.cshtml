@@ -1,36 +1,38 @@
-﻿<div class="container">
+﻿@model ViewModal
+<div class="container">
     <div class="col-lg-10 mx-auto p-3">
-        <form>
+        <form asp-action="Index">
             <div class="row g-3 align-items-center">
-                <!-- Financial Year Field -->
                 <div class="col-auto">
                     <label for="financialYear" class="visually-hidden">Financial Year:</label>
-                    <input type="text" class="form-control" id="financialYear" placeholder="Financial Year">
+                    <select class="form-select" id="financialYear" name="financialYear">
+                        <option value="@DateTime.Parse(DateTime.Now.ToString()).Year">@DateTime.Parse(DateTime.Now.ToString()).Year</option>
+                        <option value="@(@DateTime.Parse(DateTime.Now.ToString()).Year-1)">  @(@DateTime.Parse(DateTime.Now.ToString()).Year - 1)</option>
+                        <option value="@(@DateTime.Parse(DateTime.Now.ToString()).Year-2)">  @(@DateTime.Parse(DateTime.Now.ToString()).Year - 2)</option>
+                        <option value="@(@DateTime.Parse(DateTime.Now.ToString()).Year -3)"> @(@DateTime.Parse(DateTime.Now.ToString()).Year - 3)</option>
+                        <option value="@(@DateTime.Parse(DateTime.Now.ToString()).Year - 4)">@(@DateTime.Parse(DateTime.Now.ToString()).Year - 4)</option>
+                        <option value="@(@DateTime.Parse(DateTime.Now.ToString()).Year - 5)">@(@DateTime.Parse(DateTime.Now.ToString()).Year - 5)</option>
+                    </select>
                 </div>
-
-                <!-- Employee ID Field -->
                 <div class="col-auto">
                     <label for="employeeId" class="visually-hidden">Employee ID:</label>
-                    <input type="text" class="form-control" id="employeeId" placeholder="Employee ID">
+                    <input type="text" class="form-control" id="employeeId" name="employeeId" placeholder="Employee ID">
                 </div>
 
-                <!-- Employee Name Field -->
                 <div class="col-auto">
                     <label for="employeeName" class="visually-hidden">Employee Name:</label>
-                    <input type="text" class="form-control" id="employeeName" placeholder="Employee Name">
+                    <input type="text" class="form-control" id="employeeName" name="employeeName" placeholder="Employee Name">
                 </div>
 
-                <!-- Declaration Status Field -->
                 <div class="col-auto">
                     <label for="declarationStatus" class="visually-hidden">Declaration Status:</label>
-                    <select class="form-select" id="declarationStatus">
-                        <option selected>Choose...</option>
-                        <option value="1">Submitted</option>
-                        <option value="2">Not Submitted</option>
+                    <select class="form-select" id="declarationStatus" name="declarationStatus">
+                        <option value="" selected>Choose...</option>
+                        <option value="Submited">Submitted</option>
+                        <option value="Accepted">Accepted</option>
                     </select>
                 </div>
 
-                <!-- Search Button -->
                 <div class="col-auto">
                     <button type="submit" class="btn btn-primary">Search</button>
                 </div>
@@ -43,30 +45,24 @@
             <table class="table table-dark table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Financial Year</th>
+                        <th scope="col">Email Address</th>
+                        <th scope="col">Declaraton Status</th>
+                        <th scope="col">Declaraton Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>twitter</td>
-                    </tr>
+                    @foreach(var taxForm in Model.Form)
+                    {
+                        <tr>
+                            <td>@taxForm.User.FirstName @taxForm.User.LastName</td>
+                            <td>@taxForm.FinancialYear</td>
+                            <td>@taxForm.User.Email</td>
+                            <td>@taxForm.DeclarationStatus</td>
+                            <td><a asp-controller="Admin" asp-action="ShowDisplay" asp-route-id="@taxForm.Id" class="btn btn-primary">Update</a></td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>

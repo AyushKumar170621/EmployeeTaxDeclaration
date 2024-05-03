@@ -45,15 +45,20 @@ namespace EmployeeTaxDeclaration.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> ShowFormAsync(TaxForm taxForm,string financial)
+        public async Task<IActionResult> ShowFormAsync(TaxForm taxForm,string financial,string isSubmit)
         {
             if (!ModelState.IsValid)
             {
                 ApplicationUser usr = await GetCurrentUserAsync();
                 taxForm.User = usr;
                 taxForm.FinancialYear = Convert.ToInt32(financial);
-                taxForm.Frezeed = true;
-                taxForm.DeclarationStatus = "Submited";
+                if (isSubmit == "true")
+                {
+                    taxForm.DeclarationStatus = "Submited";
+                    taxForm.Frezeed = true;
+                }
+                else
+                    taxForm.DeclarationStatus = "Draft";
                 _db.TaxForms.Add(taxForm);
                 await _db.SaveChangesAsync();
                 return Redirect("/");

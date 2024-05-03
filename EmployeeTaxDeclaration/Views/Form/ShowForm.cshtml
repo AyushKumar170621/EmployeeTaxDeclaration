@@ -2,13 +2,13 @@
 
 <div class="row">
     <div class="col-lg-8 mx-auto rounded border p-3">
-        <form method="post">
+        <form method="post" id="taxForm">
             <div class="mb-3">
                 <label asp-for="OtherIncome"></label>
                 <input asp-for="OtherIncome" class="form-control" />
                 <span asp-validation-for="OtherIncome" class=" text-danger"></span>
             </div>
-            <div class="form-floating mb-3">
+            <div class=" mb-3">
                 <dl>
                     <dt>2. Investment Under Section 80C.</dt>
                     <dd>
@@ -100,9 +100,18 @@
                 <input asp-for="EduAllowance" type="checkbox" class="form-check-input" />
                 <span asp-validation-for="EduAllowance" class=" text-danger"></span>
             </div>
-            <div class="mb-3">
-                <button type="submit" class="w-100 btn btn-primary">Submit</button>
+            <input type="hidden" name="isSubmit" id="isSubmit" value="true"/>
+            <div class="d-flex justify-content-center">
+                <button onclick="saveForm()" class="w-40 btn btn-primary m-1">Save</button>
+                <button type="submit" class="w-40 btn btn-primary m-1">Submit</button>
             </div>
         </form>
     </div>
 </div>
+
+<script>
+    function saveForm(){
+        document.getElementById("isSubmit").value = "false";
+        document.getElementById("taxForm").submit();
+    }
+</script>
