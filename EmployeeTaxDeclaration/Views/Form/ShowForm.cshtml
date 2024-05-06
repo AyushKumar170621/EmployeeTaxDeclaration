@@ -1,7 +1,7 @@
 ﻿@model TaxForm
-<div class="container border rounder p-3">
+<div class="container border rounder p-3 bgOuter">
     <h1>Employee Details</h1>
-    <div class="row border rounded m-3 p-2">
+    <div class="row border rounded m-3 p-2 formBg text-black">
         <div class="col-lg-5 mx-auto">
             <p><strong>Name :</strong>@ViewBag.EmpName</p>
             <p><strong>Phone :</strong>@ViewBag.Phone</p>
@@ -13,7 +13,7 @@
     </div>
     <form method="post" id="taxForm" class="row m-3">
         <div class="col-lg-10 mx-auto p-3">
-            <div class="row rounded border mx-auto">
+            <div class="row rounded border mx-auto formBg text-black p-3">
             <div class="col-md-10 mx-auto ">
                 <div class="mb-3">
                     <label asp-for="OtherIncome"></label>
@@ -99,8 +99,8 @@
                 <input type="hidden" name="isSubmit" id="isSubmit" value="true"/>
             </div>
         </div>
-         <h2 >Reimbursement Component</h2>
-            <div class="row mx-auto rounded border">
+         <h2 class="p-1">Reimbursement Component</h2>
+            <div class="row mx-auto rounded border formBg text-black">
                 <div class="col-lg-10 ">
                     <div class="mb-3">
                     <label asp-for="LTA" class="form-check-label"></label>
@@ -127,7 +127,7 @@
         </div>
         <div class="d-flex justify-content-center">
             <button onclick="saveForm()" class="w-40 btn btn-primary m-1"><i class="bi bi-file-earmark-plus"></i> Save</button>
-            <button type="submit" class="w-40 btn btn-primary m-1"><i class="bi bi-arrow-up-square-fill"></i> Submit</button>
+            <button type="submit" class="w-40 btn btn-success m-1"><i class="bi bi-arrow-up-square-fill"></i> Submit</button>
         </div>
     </form>
 </div>

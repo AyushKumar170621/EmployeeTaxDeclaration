@@ -1,8 +1,8 @@
 ﻿@model TaxForm
-<div class="conatiner rounded border p-3">
+<div class="conatiner rounded border p-3 bgOuter">
     <h1 class="text-center">Employee Tax Form</h1>
   <div class="row">
-    <div class="col-lg-8 mx-auto rounded border p-3">
+        <div class="col-lg-8 mx-auto rounded border p-3 formBg text-black">
         <form method="post" disable>
             <div class="mb-3">
                 <label asp-for="OtherIncome"></label>
@@ -93,7 +93,7 @@
                 <span asp-validation-for="EduAllowance" class=" text-danger"></span>
             </div>
             <div class="mb-3">
-                <button type="submit" class="w-100 btn btn-primary" disabled><i class="bi bi-arrow-up-square-fill"></i> Submit</button>
+                <button type="submit" class="w-100 btn btn-success" disabled><i class="bi bi-arrow-up-square-fill"></i> Submit</button>
             </div>
         </form>
         <form method="post">

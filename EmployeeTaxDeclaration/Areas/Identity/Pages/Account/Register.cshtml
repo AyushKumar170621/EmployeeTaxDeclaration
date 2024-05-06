@@ -3,9 +3,9 @@
 
 
 <div class="row">
-    <div class="col-lg-8 mx-auto rounded border p-3">
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+    <div class="col-lg-8 mx-auto rounded border p-3 logregBg text-white">
             <h2 class="text-center"><i class="bi bi-people-fill"></i> Register</h2>
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="text-black">
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
             <div class="form-floating mb-3">
@@ -58,7 +58,7 @@
                 <label asp-for="Input.ConfirmPassword">Confirm Password</label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary"><i class="bi bi-person-plus-fill"></i> Register</button>
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-success"><i class="bi bi-person-plus-fill"></i> Register</button>
         </form>
     </div>
 </div>

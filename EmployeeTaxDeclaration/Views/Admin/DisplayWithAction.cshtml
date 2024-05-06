@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="col">
-                        <button type="submit" class="btn btn-primary">Search</button>
+                        <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i> Search</button>
                     </div>
                 </div>
             </form>
@@ -65,14 +65,14 @@
                             <td>@taxForm.User.FirstName @taxForm.User.LastName</td>
                             <td>@taxForm.unfreezeReason</td>
                             <td>
-                                <a asp-controller="Admin" asp-action="ShowDisplay" asp-route-id="@taxForm.Id" class="btn btn-primary">Show</a>
+                                <a asp-controller="Admin" asp-action="ShowDisplay" asp-route-id="@taxForm.Id" class="btn btn-primary"><i class="bi bi-display"></i> Show</a>
                                 @if (taxForm.DeclarationStatus == "Submited")
                                 {
                                     if(taxForm.unfreezeReason != "")
                                     {
-                                        <a asp-controller="Admin" asp-action="ChangeFreeze" asp-route-id="@taxForm.Id" class="btn btn-primary">Unfreeze</a> 
+                                        <a asp-controller="Admin" asp-action="ChangeFreeze" asp-route-id="@taxForm.Id" class="btn btn-warning"><i class="bi bi-unlock-fill"></i> Unfreeze</a> 
                                     }
-                                    <a asp-controller="Admin" asp-action="ChangeDeclaration" asp-route-id="@taxForm.Id" class="btn btn-primary">Accept</a>
+                                    <a asp-controller="Admin" asp-action="ChangeDeclaration" asp-route-id="@taxForm.Id" class="btn btn-success"><i class="bi bi-check-circle-fill"></i> Accept</a>
                                 }
                             </td>
 

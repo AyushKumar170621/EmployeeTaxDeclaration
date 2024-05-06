@@ -14,10 +14,10 @@
         </script>
     }
     <div class="row">
-        <div class="col-lg-6 mx-auto rounded border p-3">
+        <div class="col-lg-6 mx-auto rounded border p-3 bgIndex">
             <form method="get" asp-action="ShowForm">
+                <h2 class="text-center">Choose Financial Year</h2>
                 <div class="col-md-4 mx-auto mb-3">
-                    <label for="financial" class="label-select">Chosse Financial Year</label>
                     <select id="financial" name="financial" class="form-select">
                         <option value="@DateTime.Parse(DateTime.Now.ToString()).Year">@DateTime.Parse(DateTime.Now.ToString()).Year</option>
                         <option value="@(@DateTime.Parse(DateTime.Now.ToString()).Year-1)">  @(@DateTime.Parse(DateTime.Now.ToString()).Year - 1)</option>
@@ -28,7 +28,7 @@
                     </select>
                 </div>
                 <div class="col-md-4 mx-auto mb-3">
-                    <button class="w-100 btn btn-primary" type="submit">Open Form</button>
+                    <button class="w-100 btn btn-primary" type="submit"><i class="bi bi-envelope-open"></i> Open Form</button>
                 </div>
             </form>
         </div>
