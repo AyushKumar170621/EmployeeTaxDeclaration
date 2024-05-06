@@ -42,10 +42,6 @@
                 {
                     <p><strong>Education Allowance:</strong> No</p>
                 }
-                @if (Model.DeclarationStatus == "Submited")
-                {
-                    <div class="text-center"><a asp-controller="Admin" asp-action="ChangeFreeze" asp-route-id="@Model.Id" class="btn btn-primary">Unfreeze</a></div>
-                }
             </div>
             <div class="col-md-4">
                 <!-- Profile Picture -->

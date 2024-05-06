@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace EmployeeTaxDeclaration.Migrations
 {
     /// <inheritdoc />
-    public partial class Migration1 : Migration
+    public partial class Mig1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -167,7 +167,7 @@ namespace EmployeeTaxDeclaration.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TaxForm",
+                name: "TaxForms",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -192,13 +192,15 @@ namespace EmployeeTaxDeclaration.Migrations
                     Frezeed = table.Column<bool>(type: "bit", nullable: false),
                     LTA = table.Column<bool>(type: "bit", nullable: false),
                     EduAllowance = table.Column<bool>(type: "bit", nullable: false),
-                    DeclarationStatus = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    DeclarationStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DeclarationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    unfreezeReason = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TaxForm", x => x.Id);
+                    table.PrimaryKey("PK_TaxForms", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_TaxForm_AspNetUsers_UserId",
+                        name: "FK_TaxForms_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
@@ -210,8 +212,8 @@ namespace EmployeeTaxDeclaration.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "58fda1e2-03ae-4b93-9281-ffe437a800c4", null, "client", "client" },
-                    { "7c26d3fa-825e-405b-98dd-d573385a0560", null, "admin", "admin" }
+                    { "1eb5ca1e-67ea-47c5-8bdb-c70b8ffe6af6", null, "admin", "admin" },
+                    { "bdf3c5f5-de32-4798-a56f-4902cef105fb", null, "client", "client" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -254,14 +256,8 @@ namespace EmployeeTaxDeclaration.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TaxForm_FinancialYear",
-                table: "TaxForm",
-                column: "FinancialYear",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_TaxForm_UserId",
-                table: "TaxForm",
+                name: "IX_TaxForms_UserId",
+                table: "TaxForms",
                 column: "UserId");
         }
 
@@ -284,7 +280,7 @@ namespace EmployeeTaxDeclaration.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "TaxForm");
+                name: "TaxForms");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

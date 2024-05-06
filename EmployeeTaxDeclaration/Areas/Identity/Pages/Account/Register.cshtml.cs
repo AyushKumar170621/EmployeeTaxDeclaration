@@ -20,6 +20,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.Metrics;
 
 namespace EmployeeTaxDeclaration.Areas.Identity.Pages.Account
 {
@@ -31,6 +32,7 @@ namespace EmployeeTaxDeclaration.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<ApplicationUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private static int counter=1;
 
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
@@ -98,12 +100,12 @@ namespace EmployeeTaxDeclaration.Areas.Identity.Pages.Account
 
             [Required]
             [Display(Name = "Enter your pan number.")]
-            [RegularExpression(@"^[A-Z]{5}\d{4}[A-Z]$")]
+            [RegularExpression(@"^[A-Z]{5}\d{4}[A-Z]$", ErrorMessage = "Please enter a valid PAN number.")]
             public required string PanNumber { get; set; }
 
             [Required]
             [Display(Name = "Enter your social security number.")]
-            [RegularExpression(@"^\d{3}-\d{2}-\d{4}$")]
+            [RegularExpression(@"^\d{3}-\d{2}-\d{4}$", ErrorMessage = "Please enter a valid Social Security number (XXX-XX-XXXX).")]
             public required string SocialSecurityNumber { get; set; }
 
             [Required, NotNull]
@@ -113,7 +115,7 @@ namespace EmployeeTaxDeclaration.Areas.Identity.Pages.Account
             public required string Address { get; set; }
             [Required]
             [Display(Name = "Pin Code")]
-            [RegularExpression(@"^\d{6}$")]
+            [RegularExpression(@"^\d{6}$", ErrorMessage = "Please enter a valid 6-digit PIN code.")]
             public string ZipCode { get; set; }
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -167,7 +169,7 @@ namespace EmployeeTaxDeclaration.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-                    _userManager.AddToRoleAsync(user, "client");
+                    await _userManager.AddToRoleAsync(user, "client");
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));

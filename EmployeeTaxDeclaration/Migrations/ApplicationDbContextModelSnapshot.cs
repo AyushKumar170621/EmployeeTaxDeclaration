@@ -132,6 +132,9 @@ namespace EmployeeTaxDeclaration.Migrations
                     b.Property<int>("ApplicationUserId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("DeclarationDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("DeclarationStatus")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -194,6 +197,10 @@ namespace EmployeeTaxDeclaration.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("unfreezeReason")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
@@ -230,13 +237,13 @@ namespace EmployeeTaxDeclaration.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a44fb154-c877-46e0-9d86-fe57c498d742",
+                            Id = "1eb5ca1e-67ea-47c5-8bdb-c70b8ffe6af6",
                             Name = "admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
-                            Id = "1f0eac60-4736-438d-a282-7b6a2b5c5338",
+                            Id = "bdf3c5f5-de32-4798-a56f-4902cef105fb",
                             Name = "client",
                             NormalizedName = "client"
                         });

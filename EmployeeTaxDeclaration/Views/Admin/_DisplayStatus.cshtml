@@ -1,0 +1,13 @@
+﻿@model string
+
+    <div class="alert alert-info" id="statusDis" role="alert">
+        @Model
+    </div>
+    <script>
+        setTimeout(function () {
+            var statusMessage = document.getElementById('statusDis');
+            if (statusMessage) {
+                statusMessage.style.display = 'none';
+            }
+        }, 3000);
+    </script>

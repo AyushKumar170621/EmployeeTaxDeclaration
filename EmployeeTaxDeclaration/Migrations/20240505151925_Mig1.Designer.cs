@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EmployeeTaxDeclaration.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240501171245_Migration1")]
-    partial class Migration1
+    [Migration("20240505151925_Mig1")]
+    partial class Mig1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -135,6 +135,9 @@ namespace EmployeeTaxDeclaration.Migrations
                     b.Property<int>("ApplicationUserId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("DeclarationDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("DeclarationStatus")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -197,14 +200,15 @@ namespace EmployeeTaxDeclaration.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("Id");
+                    b.Property<string>("unfreezeReason")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasIndex("FinancialYear")
-                        .IsUnique();
+                    b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("TaxForm");
+                    b.ToTable("TaxForms");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -236,13 +240,13 @@ namespace EmployeeTaxDeclaration.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7c26d3fa-825e-405b-98dd-d573385a0560",
+                            Id = "1eb5ca1e-67ea-47c5-8bdb-c70b8ffe6af6",
                             Name = "admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
-                            Id = "58fda1e2-03ae-4b93-9281-ffe437a800c4",
+                            Id = "bdf3c5f5-de32-4798-a56f-4902cef105fb",
                             Name = "client",
                             NormalizedName = "client"
                         });

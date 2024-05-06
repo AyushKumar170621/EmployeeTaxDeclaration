@@ -23,6 +23,7 @@ namespace EmployeeTaxDeclaration.Data
             client.NormalizedName = "client";
 
             builder.Entity<IdentityRole>().HasData(admin, client);
+            builder.Ignore<ViewModal>();
 
         }
     }

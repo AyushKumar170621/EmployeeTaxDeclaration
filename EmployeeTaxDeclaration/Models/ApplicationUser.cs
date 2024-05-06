@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
@@ -41,8 +42,7 @@ namespace EmployeeTaxDeclaration.Models
         [RegularExpression(@"^\d{6}$")]
         public string?  ZipCode { get; set; }
 
-
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
 
         public ICollection<TaxForm> Forms { get;  } = new List<TaxForm>();
     }

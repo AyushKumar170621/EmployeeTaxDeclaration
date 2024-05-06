@@ -69,5 +69,8 @@ namespace EmployeeTaxDeclaration.Models
         public bool EduAllowance { get; set; }
         public string DeclarationStatus { get; set; } = "";
 
+        public DateTime DeclarationDate { get; set; }
+        public string unfreezeReason { get; set; } = "";
+
     }
 }
