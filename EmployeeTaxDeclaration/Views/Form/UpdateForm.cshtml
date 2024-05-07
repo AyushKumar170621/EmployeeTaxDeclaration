@@ -1,0 +1,129 @@
+﻿@model TaxForm
+<div class="conatiner rounded border p-3 bgOuter">
+    <h1 class="text-center">Employee Tax Form</h1>
+<div class="row">
+        <div class="col-lg-8 mx-auto rounded border p-3 formBg text-black">
+        <form method="post" id="taxForm">
+            <div class="mb-3">
+                <label asp-for="OtherIncome"></label>
+                <input asp-for="OtherIncome" class="form-control" readonly />
+                <span asp-validation-for="OtherIncome" class=" text-danger"></span>
+            </div>
+            <div class=" mb-3">
+                <dl>
+                    <dt>2. Investment Under Section 80C.</dt>
+                    <dd class="mx-5">
+                        <div class="mb-3">
+                            <label asp-for="SukSamAcc"></label>
+                            <input asp-for="SukSamAcc" class="form-control" readonly />
+                            <span asp-validation-for="SukSamAcc" class=" text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Ppf"></label>
+                            <input asp-for="Ppf" class="form-control" readonly />
+                            <span asp-validation-for="Ppf" class=" text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="LifeInsurance"></label>
+                            <input asp-for="LifeInsurance" class="form-control" readonly />
+                            <span asp-validation-for="LifeInsurance" class=" text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="TuitionFee"></label>
+                            <input asp-for="TuitionFee" class="form-control" readonly />
+                            <span asp-validation-for="TuitionFee" class=" text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="FixedDeposit"></label>
+                            <input asp-for="FixedDeposit" class="form-control" readonly />
+                            <span asp-validation-for="FixedDeposit" class=" text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="PrincipalAmount"></label>
+                            <input asp-for="PrincipalAmount" class="form-control" readonly />
+                            <span asp-validation-for="PrincipalAmount" class=" text-danger"></span>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NPS"></label>
+                <input asp-for="NPS" class="form-control" readonly />
+                <span asp-validation-for="NPS" class=" text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="HighEduLoan"></label>
+                <input asp-for="HighEduLoan" class="form-control" readonly />
+                <span asp-validation-for="HighEduLoan" class=" text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="HousingLoanInterest"></label>
+                <input asp-for="HousingLoanInterest" class="form-control" readonly />
+                <span asp-validation-for="HousingLoanInterest" class=" text-danger"></span>
+            </div>
+           
+            <div class="mb-3">
+                <label asp-for="HouseRent"></label>
+                <input asp-for="HouseRent" class="form-control" readonly />
+                <span asp-validation-for="HouseRent" class=" text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="TDS"></label>
+                <input asp-for="TDS" class="form-control" readonly />
+                <span asp-validation-for="TDS" class=" text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="MediClaim"></label>
+                <input asp-for="MediClaim" class="form-control" readonly />
+                <span asp-validation-for="MediClaim" class=" text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="FamilyHealth"></label>
+                <input asp-for="FamilyHealth" class="form-control" readonly />
+                <span asp-validation-for="FamilyHealth" class=" text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="LTA" class="form-check-label"></label>
+                <input asp-for="LTA" type="checkbox" class="form-check-input" disabled />
+                <span asp-validation-for="LTA" class=" text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="EduAllowance" class="form-check-label"></label>
+                <input asp-for="EduAllowance" type="checkbox" class="form-check-input" disabled />
+                <span asp-validation-for="EduAllowance" class=" text-danger"></span>
+            </div>
+            <input type="hidden" name="isSubmit" id="isSubmit" value="true" />
+            <div class="d-flex justify-content-center">
+                <button type="button" onclick="toggleEditMode(event)" id="editButton" class="w-40 btn btn-warning m-1"><i class="bi bi-pencil-square"></i> Edit</button>
+                <button type="button" onclick="saveForm()" class="w-40 btn btn-primary m-1"><i class="bi bi-file-earmark-plus"></i> Save</button>
+                <button type="submit" class="w-40 btn btn-success m-1"><i class="bi bi-arrow-up-square-fill"></i> Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+<script>
+    function toggleEditMode(event) {
+        event.preventDefault();  // Prevent default action (form submission)
+        var formFields = document.querySelectorAll('#taxForm input');
+        var isReadOnly = formFields[0].readOnly; // Assume the first field represents the state
+
+        // Iterate over each field to toggle readOnly for inputs and disabled for checkboxes
+        formFields.forEach(field => {
+            if (field.type === "number") {
+                field.readOnly = !isReadOnly;  // Toggle readOnly for text inputs
+            } else if (field.type === "checkbox") {
+                field.disabled = !field.disabled;  // Toggle disabled for checkboxes
+            }
+        });
+
+        // Update the text of the edit button based on the readOnly state
+        document.getElementById('editButton').textContent = isReadOnly ? 'Lock' : 'Edit';
+    }
+
+    function saveForm() {
+        document.getElementById("isSubmit").value = "false";
+        document.getElementById("taxForm").submit();
+    }
+</script>

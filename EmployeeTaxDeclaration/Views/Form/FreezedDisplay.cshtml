@@ -1,0 +1,114 @@
+﻿@model TaxForm
+<div class="conatiner rounded border p-3 bgOuter">
+    <h1 class="text-center">Employee Tax Form</h1>
+  <div class="row">
+        <div class="col-lg-8 mx-auto rounded border p-3 formBg text-black">
+        <form method="post" disable>
+            <div class="mb-3">
+                <label asp-for="OtherIncome"></label>
+                <input asp-for="OtherIncome" class="form-control" disabled/>
+                <span asp-validation-for="OtherIncome" class=" text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <dl>
+                    <dt>2. Investment Under Section 80C.</dt>
+                    <dd class="mx-5">
+                        <div class="mb-3">
+                            <label asp-for="SukSamAcc"></label>
+                            <input asp-for="SukSamAcc" class="form-control" disabled />
+                            <span asp-validation-for="SukSamAcc" class=" text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Ppf"></label>
+                            <input asp-for="Ppf" class="form-control" disabled />
+                            <span asp-validation-for="Ppf" class=" text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="LifeInsurance"></label>
+                            <input asp-for="LifeInsurance" class="form-control" disabled />
+                            <span asp-validation-for="LifeInsurance" class=" text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="TuitionFee"></label>
+                            <input asp-for="TuitionFee" class="form-control" disabled />
+                            <span asp-validation-for="TuitionFee" class=" text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="FixedDeposit"></label>
+                            <input asp-for="FixedDeposit" class="form-control" disabled />
+                            <span asp-validation-for="FixedDeposit" class=" text-danger"></span>
+                        </div>
+                   
+                        <div class="mb-3">
+                            <label asp-for="PrincipalAmount"></label>
+                            <input asp-for="PrincipalAmount" class="form-control" disabled/>
+                            <span asp-validation-for="PrincipalAmount" class=" text-danger"></span>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NPS"></label>
+                <input asp-for="NPS" class="form-control" disabled />
+                <span asp-validation-for="NPS" class=" text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="HighEduLoan"></label>
+                <input asp-for="HighEduLoan" class="form-control" disabled />
+                <span asp-validation-for="HighEduLoan" class=" text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="HousingLoanInterest"></label>
+                <input asp-for="HousingLoanInterest" class="form-control" disabled />
+                <span asp-validation-for="HousingLoanInterest" class=" text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="HouseRent"></label>
+                <input asp-for="HouseRent" class="form-control" disabled />
+                <span asp-validation-for="HouseRent" class=" text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="TDS"></label>
+                <input asp-for="TDS" class="form-control" disabled />
+                <span asp-validation-for="TDS" class=" text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="MediClaim"></label>
+                <input asp-for="MediClaim" class="form-control" disabled />
+                <span asp-validation-for="MediClaim" class=" text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="FamilyHealth"></label>
+                <input asp-for="FamilyHealth" class="form-control" disabled />
+                <span asp-validation-for="FamilyHealth" class=" text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="LTA" class="form-check-label"></label>
+                <input asp-for="LTA" type="checkbox" class="form-check-input" disabled />
+                <span asp-validation-for="LTA" class=" text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="EduAllowance" class="form-check-label"></label>
+                <input asp-for="EduAllowance" type="checkbox" class="form-check-input" disabled />
+                <span asp-validation-for="EduAllowance" class=" text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="w-100 btn btn-success" disabled><i class="bi bi-arrow-up-square-fill"></i> Submit</button>
+            </div>
+        </form>
+            @if (Model.DeclarationStatus != "Accepted")
+            {
+                <form method="post">
+                    <div class="mb-3">
+                <input type="hidden" name="formId" id="formId" value="@Model.Id" />
+                <lable for="unfreezeReason" class="form-label">Enter Unfreeze Reason</lable>
+                <input type="text" name="unfreezeReason" id="unfreezeReason" class="form-control" required/>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="w-100 btn btn-primary"><i class="bi bi-send"></i> Request for Unfreeze</button>
+            </div>
+        </form>
+        }
+    </div>
+</div>
+</div>

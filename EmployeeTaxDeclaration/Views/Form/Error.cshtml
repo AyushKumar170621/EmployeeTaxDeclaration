@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">An Error Occurred</h1>
+<p>We're sorry, but an unexpected error occurred.</p>
+<p>Error Message: @ViewBag.msg</p>
+
+<a href="@Url.Action("Index", "Home")" class="btn btn-primary">Go to Home</a>

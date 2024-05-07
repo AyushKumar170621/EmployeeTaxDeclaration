@@ -1,0 +1,38 @@
+﻿<div class="container">
+    @if(ViewBag.StatusMessage != "")
+    {
+        <div class="alert alert-info" id="statusDis" role="alert">
+            @ViewData["StatusMessage"]
+        </div>
+        <script>
+            setTimeout(function () {
+                var statusMessage = document.getElementById('statusDis');
+                if (statusMessage) {
+                    statusMessage.style.display = 'none';
+                }
+            }, 3000);
+        </script>
+    }
+    <div class="row">
+        <div class="col-lg-6 mx-auto rounded border p-3 bgIndex">
+            <form method="get" asp-action="ShowForm">
+                <h2 class="text-center">Choose Financial Year</h2>
+                <div class="col-md-4 mx-auto mb-3">
+                    <select id="financial" name="financial" class="form-select">
+                        <option value="@DateTime.Parse(DateTime.Now.ToString()).Year">@DateTime.Parse(DateTime.Now.ToString()).Year</option>
+                        <option value="@(@DateTime.Parse(DateTime.Now.ToString()).Year-1)">  @(@DateTime.Parse(DateTime.Now.ToString()).Year - 1)</option>
+                        <option value="@(@DateTime.Parse(DateTime.Now.ToString()).Year-2)">  @(@DateTime.Parse(DateTime.Now.ToString()).Year - 2)</option>
+                        <option value="@(@DateTime.Parse(DateTime.Now.ToString()).Year -3)"> @(@DateTime.Parse(DateTime.Now.ToString()).Year - 3)</option>
+                        <option value="@(@DateTime.Parse(DateTime.Now.ToString()).Year - 4)">@(@DateTime.Parse(DateTime.Now.ToString()).Year - 4)</option>
+                        <option value="@(@DateTime.Parse(DateTime.Now.ToString()).Year - 5)">@(@DateTime.Parse(DateTime.Now.ToString()).Year - 5)</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mx-auto mb-3">
+                    <button class="w-100 btn btn-primary" type="submit"><i class="bi bi-envelope-open"></i> Open Form</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+

@@ -1,0 +1,84 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> SignInManager
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EmployeeTaxDeclaration</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/EmployeeTaxDeclaration.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body class="newBg text-white">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-people"></i> EmployeeTaxDeclaration</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" >
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link  @(IsActive("Home", "Index"))" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house-fill"></i> Home</a>
+                        </li>
+                        @if(SignInManager.IsSignedIn(User))
+                        {
+                            if(User.IsInRole("client"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link  @(IsActive("Form", "Index"))" asp-area="" asp-controller="Form" asp-action="Index"><i class="bi bi-clipboard2-data-fill"></i> Tax Form</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link  @(IsActive("Home", "LoggedUserForms"))" asp-area="" asp-controller="Home" asp-action="LoggedUserForms"><i class="bi bi-journal"></i> User Form History</a>
+                                </li>
+                            }
+                            else if(User.IsInRole("admin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link  @(IsActive("Admin", "Index"))" asp-area="" asp-controller="Admin" asp-action="Index"><i class="bi bi-files"></i> All Records Details</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link  @(IsActive("Admin", "DisplayWithAction"))" asp-area="" asp-controller="Admin" asp-action="DisplayWithAction"><i class="bi bi-list-task"></i> Form And Records</a>
+                                </li>
+                            }
+
+                        }       
+                           
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted bg-white">
+        <div class="container text-center">
+            &copy; 2024 - EmployeeTaxDeclaration - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+@functions {
+    private string IsActive(string controller, string action)
+    {
+        var currentController = ViewContext.RouteData.Values["Controller"]?.ToString();
+        var currentAction = ViewContext.RouteData.Values["Action"]?.ToString();
+
+        return (controller == currentController && action == currentAction) ? "active" : "";
+    }
+}
