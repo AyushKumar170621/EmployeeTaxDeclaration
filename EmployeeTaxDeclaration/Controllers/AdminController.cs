@@ -234,6 +234,33 @@ namespace EmployeeTaxDeclaration.Controllers
         }
 
         [Authorize(Roles = "admin")]
+        public async Task<IActionResult> Decline(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                TaxForm tax = _db.TaxForms.Where(tf => tf.Id == id).FirstOrDefault();
+                if (tax == null)
+                {
+                    return NotFound();
+                }
+                _db.TaxForms.Remove(tax);
+                await _db.SaveChangesAsync();
+                return RedirectToAction("DisplayWithAction", new { status_msg = "Form Declined Successfully" });
+            }
+            catch (Exception e)
+            {
+                string ErrMsg = e.Message;
+                return RedirectToAction("Error", new { ErrMsg = ErrMsg });
+            }
+
+        }
+
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> ChangeDeclaration(int? id)
         {
             if (id == null || id == 0)

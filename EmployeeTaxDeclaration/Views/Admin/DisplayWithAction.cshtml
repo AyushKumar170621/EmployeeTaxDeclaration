@@ -6,10 +6,14 @@
         {
             @Html.Partial("_DisplayStatus", "Form Unfreezed Successfully")
         }
-        else
+        else if (ViewBag.Msg == "Accepted Successfully")
         {
             @Html.Partial("_DisplayStatus", "Form Accepted Successfully")
 
+        }
+        else
+        {
+            @Html.Partial("_DisplayStatus", "Form Declined Successfully")
         }
     }
     <div class="row justify-content-center mb-3">
@@ -106,7 +110,7 @@
                     <li class="page-item"><a class="page-link" href="/Admin/DisplayWithAction?financialYear=@Model.finacialYear&employeeId=@Model.employeeId&employeeName=@Model.employeeName&currentPage=@(Model.CurrentPage+1)">Next</a></li>
                 }
             </ul>
-        </nav>s
+        </nav>
     </div>
 
 </div>

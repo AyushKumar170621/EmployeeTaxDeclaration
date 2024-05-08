@@ -44,11 +44,10 @@ namespace EmployeeTaxDeclaration.Controllers
                 ViewBag.Phone = usr.PhoneNumber;
 
                 //getting all year forms of logged user
-                IEnumerable<TaxForm> taxForms = _db.TaxForms.Where(tf => tf.User.Id == userId);
+                IEnumerable<TaxForm> taxForms = _db.TaxForms.Where(tf => tf.User.Id == userId && tf.FinancialYear == Convert.ToInt32(financial));
                 if (taxForms.Any())
                 {
-                    foreach (TaxForm taxForm in taxForms)
-                    {
+                    TaxForm taxForm = taxForms.First();
                         //selecting form for selected final year
                         if (taxForm.FinancialYear == Convert.ToInt32(financial))
                         {
@@ -67,7 +66,6 @@ namespace EmployeeTaxDeclaration.Controllers
 
                             return View(taxForm);
                         }
-                    }
                 }
                 
                 //blank view if form does not exist for that year

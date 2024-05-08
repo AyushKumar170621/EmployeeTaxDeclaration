@@ -44,7 +44,10 @@
                 }
                 @if (Model.DeclarationStatus == "Submited")
                 {
-                    <div class="text-center"><a asp-controller="Admin" asp-action="ChangeFreeze" asp-route-id="@Model.Id" class="btn btn-primary">Unfreeze</a></div>
+                    <div class="text-center">
+                        <a asp-controller="Admin" asp-action="ChangeFreeze" asp-route-id="@Model.Id" class="btn btn-primary m-1"><i class="bi bi-unlock-fill"> </i>Unfreeze</a>
+                        <a asp-controller="Admin" asp-action="Decline" asp-route-id="@Model.Id" class="btn btn-danger m-1"><i class="bi bi-x-square-fill"></i> Decline</a>
+                    </div>
                 }
             </div>
             <div class="col-md-4">
