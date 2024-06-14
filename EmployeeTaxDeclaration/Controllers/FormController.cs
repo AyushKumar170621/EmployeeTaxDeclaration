@@ -150,7 +150,6 @@ namespace EmployeeTaxDeclaration.Controllers
                     {
                         taxForm.DeclarationStatus = "Draft";
                         status = "Saved " + status;
-
                     }
                     taxForm.DeclarationDate = DateTime.Now;
                     _db.TaxForms.Update(taxForm);

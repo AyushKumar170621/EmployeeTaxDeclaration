@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\images\\carousel3.jpg"
     },
     {
+      "Id": "C:\\Users\\kvbhk\\source\\repos\\EmployeeTaxDeclaration\\EmployeeTaxDeclaration\\wwwroot\\images\\john.jpg",
+      "PackagePath": "staticwebassets\\images\\john.jpg"
+    },
+    {
       "Id": "C:\\Users\\kvbhk\\source\\repos\\EmployeeTaxDeclaration\\EmployeeTaxDeclaration\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NmDVwNqcHCO60XCIijcazoArVnuLeQ8ANTTt4AuOS3Q=",
+  "Hash": "QO2u8EqVxFIhKzf1YjvtWjMZoAcIAgLNmheXLN2veSc=",
   "Source": "EmployeeTaxDeclaration",
   "BasePath": "_content/EmployeeTaxDeclaration",
   "Mode": "Default",
@@ -1326,6 +1326,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\carousel3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\kvbhk\\source\\repos\\EmployeeTaxDeclaration\\EmployeeTaxDeclaration\\wwwroot\\images\\john.jpg",
+      "SourceId": "EmployeeTaxDeclaration",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kvbhk\\source\\repos\\EmployeeTaxDeclaration\\EmployeeTaxDeclaration\\wwwroot\\",
+      "BasePath": "_content/EmployeeTaxDeclaration",
+      "RelativePath": "images/john.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\john.jpg"
     },
     {
       "Identity": "C:\\Users\\kvbhk\\source\\repos\\EmployeeTaxDeclaration\\EmployeeTaxDeclaration\\wwwroot\\images\\Profile.png",
